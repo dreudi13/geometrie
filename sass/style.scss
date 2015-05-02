@@ -1,1 +1,45 @@
 @import "compass";
+
+/* global
+****************************************/
+*{@include box-sizing(border-box);}
+h1,h2{text-transform: uppercase;}
+h1{margin-bottom: 50px;}
+.box{padding: 20px; text-align: center; border: 2px solid #000;}
+.center{margin: 0 auto;}
+
+/* header
+****************************************/
+$headerHeight: 75px;
+header{
+	margin-bottom: 20px;
+	height: $headerHeight; background-color: #245; color: #fff; vertical-align: middle;
+	img{display: block; margin: 20px 0 0 50px;}	
+}
+
+/* circle
+****************************************/
+$radius: 200px;
+.circle{
+	width: $radius; height: $radius; background-color: #92e144;
+	@include border-radius($radius/2);
+}
+
+/* triangle
+**************************************/
+$lengthTri: 50px;
+$colorTri: #4491d2;
+.triangle{
+	border-style: solid;
+	border-color: red transparent $colorTri  transparent;
+	border-width: 0 $lengthTri $lengthTri $lengthTri;
+	width: 0; height: 0;
+}
+
+/* skew
+**************************************/
+$angleSkew: 15deg;
+.skew{
+	width: 100px; height: 200px; background-color: #e92949;
+	@include skewX($angleSkew*-1);
+}
