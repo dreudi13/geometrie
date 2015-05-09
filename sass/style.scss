@@ -7,7 +7,8 @@ h1,h2{text-transform: uppercase;}
 h1{margin-bottom: 50px;}
 .box{padding: 20px; text-align: center; border: 2px solid #000;}
 .center{margin: 0 auto;}
-
+.container{margin-bottom: 10px;}
+	
 /* header
 ****************************************/
 $headerHeight: 75px;
@@ -27,19 +28,33 @@ $radius: 200px;
 
 /* triangle
 **************************************/
-$lengthTri: 50px;
-$colorTri: #4491d2;
+$triLength: 50px;
+$triColor: #4491d2;
 .triangle{
 	border-style: solid;
-	border-color: red transparent $colorTri  transparent;
-	border-width: 0 $lengthTri $lengthTri $lengthTri;
+	border-color: red transparent $triColor  transparent;
+	border-width: 0 $triLength $triLength $triLength;
 	width: 0; height: 0;
 }
 
 /* skew
 **************************************/
-$angleSkew: 15deg;
+$skewAngle: 15deg;
+$skewLength: 200px;
+$skewcolor1: #e92949;
 .skew{
-	width: 100px; height: 200px; background-color: #e92949;
-	@include skewX($angleSkew*-1);
+	width: $skewLength*0.5; height: $skewLength; background-color: $skewcolor1;
+	@include skewX($skewAngle);
+}
+
+/* skew-n
+**************************************/
+.skew1, .skew2{
+	@extend .skew; @include skewX($skewAngle*2);
+	width: $skewLength*0.2;
+}
+.skew2{
+	@include skewX($skewAngle*-2);
+	margin-top: $skewLength*-1;
+	background-color: $skewcolor1*0.5;
 }

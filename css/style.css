@@ -24,6 +24,10 @@ h1 {
   margin: 0 auto;
 }
 
+.container {
+  margin-bottom: 10px;
+}
+
 /* header
 ****************************************/
 header {
@@ -61,12 +65,31 @@ header img {
 
 /* skew
 **************************************/
-.skew {
+.skew, .skew1, .skew2 {
   width: 100px;
   height: 200px;
   background-color: #e92949;
-  -moz-transform: skewX(-15deg);
-  -ms-transform: skewX(-15deg);
-  -webkit-transform: skewX(-15deg);
-  transform: skewX(-15deg);
+  -moz-transform: skewX(15deg);
+  -ms-transform: skewX(15deg);
+  -webkit-transform: skewX(15deg);
+  transform: skewX(15deg);
+}
+
+/* skew-n
+**************************************/
+.skew1, .skew2 {
+  -moz-transform: skewX(30deg);
+  -ms-transform: skewX(30deg);
+  -webkit-transform: skewX(30deg);
+  transform: skewX(30deg);
+  width: 40px;
+}
+
+.skew2 {
+  -moz-transform: skewX(-30deg);
+  -ms-transform: skewX(-30deg);
+  -webkit-transform: skewX(-30deg);
+  transform: skewX(-30deg);
+  margin-top: -200px;
+  background-color: #741424;
 }
